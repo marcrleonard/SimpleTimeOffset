@@ -7,6 +7,7 @@ Why?
 ----
 While doing an iot project with micro python, I found that an internet connected device will get the correct time, but micropython would not give you the ability to add a timezone. So if you know (or figure out) the proper hourly offset, you can use this library to get the correct time.
 It has no dependencies (except the `new_time` method, so you can easily use in micro python.
+This does not do any other 'fancy' calculations like daylight savings time.
 
 Example...
 ----------
@@ -42,6 +43,6 @@ Offset   4 Days, 0 Hours
 
 Todo:
 -----
-Add other `start_time` inputs.
-
-    * Right now, it only supports a tuple as shown above (this is what micro python uses as a time output - not a time object).
+Add other `start_time` inputs. Right now, it only supports a tuple as shown above (this is what micro python uses as a time output - not a time object).
+Add negative times
+Add month offset (if hours > 24*31 or whatever the month value is.)

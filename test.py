@@ -5,7 +5,7 @@ current_time = (2017, 10, 27, 10, 39, 23, 4, 300)
 
 
 time_set = SimpleTimeOffset(start_time=current_time)
-offset_hours = 96
+offset_hours = 26
 time_set.offset_hours(offset_hours)
 
 print('Offset   {}'.format(offset_hours))

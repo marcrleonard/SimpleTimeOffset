@@ -64,9 +64,10 @@ class SimpleTimeOffset(object):
 
         # month offset, need to calculate this...
         # self.offset_months()
+        # raise NotImplementedError
 
     def offset_months(self, offset_months_input):
-        pass
+        raise NotImplementedError
 
     def new_time(self):
         from datetime import datetime
