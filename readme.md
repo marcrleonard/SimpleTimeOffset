@@ -6,6 +6,7 @@ This library provides a very simple way to add hour offsets to a given time.
 Why?
 ----
 While doing an iot project with micro python, I found that an internet connected device will get the correct time, but micropython would not give you the ability to add a timezone. So if you know (or figure out) the proper hourly offset, you can use this library to get the correct time.
+It has no dependencies (except the `new_time` method, so you can easily use in micro python.
 
 Example...
 ----------
