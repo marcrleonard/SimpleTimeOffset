@@ -1,5 +1,5 @@
 class SimpleTimeOffset(object):
-    def __init__(self, start_time):
+    def __init__(self, start_time, millitary=False):
         self.start_time = start_time
 
         self.max_values = {'seconds': 12,
@@ -35,8 +35,15 @@ class SimpleTimeOffset(object):
         self.day_offset = 0
         self.hour_remainder = 0
 
+        self.millitary = millitary
+
     def __str__(self):
         return '{}:{:02d}'.format(self.hour_new, self.minute_new)
+
+    def _fmt(self):
+        if not self.millitary:
+            if self.hour_new > 12:
+                self.hour_new = self.hour_new - 12
 
     def offset_hours(self, offset_hours_input):
         # this will only change the day when it's over 24 hour offset. It has no concept of AM/PM.
@@ -51,6 +58,8 @@ class SimpleTimeOffset(object):
 
         if self.day_offset > 0:
             self.offset_days(self.day_offset)
+
+        # self._fmt()
 
     def offset_days(self, offset_days_input):
 
